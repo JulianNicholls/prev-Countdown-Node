@@ -5,26 +5,13 @@ class Word {
   constructor(word) {
     this.word = word.toLowerCase();
 
-    this.deconstruct();
+    this._deconstruct();
   }
-
-  deconstruct = () => {
-    this.letterset = {};
-
-    this.word.split('').forEach(char => {
-      const count = this.letterset[char];
-
-      this.letterset[char] = count ? count + 1 : 1;
-    });
-  };
 
   canBeMadeFrom = candidateset => {
     if (candidateset instanceof Word) candidateset = candidateset.letterset;
-    console.log(candidateset);
 
     Object.keys(this.letterset).forEach(char => {
-      console.log(candidateset[char], this.letterset[char]);
-
       if (!candidateset[char] || candidateset[char] < this.letterset[char])
         return false;
     });
@@ -32,8 +19,30 @@ class Word {
     return true;
   };
 
-  letters = () => {
-    return this.word.split('');
+  isAnagramOf = other => {
+    const keys = Object.keys(this.letterset);
+
+    other = other.letterset;
+
+    if (keys.length !== Object.keys(other).length) return false;
+
+    keys.forEach(char => {
+      const othervalue = other[char];
+
+      if (!othervalue || othervalue !== this.letterset[char]) return false;
+    });
+
+    return true;
+  };
+
+  _deconstruct = () => {
+    this.letterset = {};
+
+    this.word.split('').forEach(char => {
+      const count = this.letterset[char];
+
+      this.letterset[char] = count ? count + 1 : 1;
+    });
   };
 }
 
