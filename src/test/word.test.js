@@ -31,4 +31,21 @@ describe('Word', () => {
 
     expect(word.canBeMadeFrom(candidate)).toBe(true);
   });
+
+  test('should be able to tell if it it an anagram of another word', () => {
+    const word = new Word('orchestra');
+    const other = new Word('carthorse');
+    const third = new Word('orchestral');
+
+    expect(word.isAnagramOf(other)).toBe(true);
+    expect(other.isAnagramOf(word)).toBe(true);
+
+    expect(word.isAnagramOf(third)).toBe(false); // Not anagrams...
+    expect(third.isAnagramOf(word)).toBe(false);
+    expect(other.isAnagramOf(third)).toBe(false);
+    expect(third.isAnagramOf(other)).toBe(false);
+
+    expect(word.canBeMadeFrom(third)).toBe(true); // ...but can be made
+    expect(other.canBeMadeFrom(third)).toBe(true);
+  });
 });
