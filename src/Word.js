@@ -8,40 +8,37 @@ class Word {
     this._deconstruct();
   }
 
-  canBeMadeFrom = candidateset => {
-    if (candidateset instanceof Word) candidateset = candidateset.letterset;
+  canBeMadeFrom = other => {
+    if (other instanceof Word) other = other.letterMap;
 
-    Object.keys(this.letterset).forEach(char => {
-      if (!candidateset[char] || candidateset[char] < this.letterset[char])
-        return false;
+    this.letterMap.forEach((value, key) => {
+      if (!other.has(key) || other.get(key) < value) return false;
     });
 
     return true;
   };
 
   isAnagramOf = other => {
-    const keys = Object.keys(this.letterset);
+    other = other.letterMap;
 
-    other = other.letterset;
+    if (this.letterMap.size !== other.size) return false;
 
-    if (keys.length !== Object.keys(other).length) return false;
+    this.letterMap.forEach((value, key) => {
+      const othervalue = other.get(key);
 
-    keys.forEach(char => {
-      const othervalue = other[char];
-
-      if (!othervalue || othervalue !== this.letterset[char]) return false;
+      if (!othervalue || othervalue !== value) return false;
     });
 
     return true;
   };
 
   _deconstruct = () => {
-    this.letterset = {};
+    this.letterMap = new Map();
 
     this.word.split('').forEach(char => {
-      const count = this.letterset[char];
+      const count = this.letterMap.get(char);
 
-      this.letterset[char] = count ? count + 1 : 1;
+      this.letterMap.set(char, count ? count + 1 : 1);
     });
   };
 }
