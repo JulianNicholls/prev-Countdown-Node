@@ -20,11 +20,28 @@ describe('Word', () => {
     );
   });
 
-  test('should be able to tell if it can be made from a set of letters', () => {
+  test('should return the contained word as .text', () => {
+    const word = new Word('worldly'); // Contains word
+
+    expect(word.text).toEqual('worldly');
+  });
+
+  test('should be able to tell if it can be made from a string', () => {
     const word = new Word('word');
-    const candidate = new Word('worldly'); // Contains word
+    const candidate = 'worldly'; // Contains word
+    const third = 'blueprint';
+
+    expect(word.canBeMadeFrom(candidate)).toBe(true);
+    expect(word.canBeMadeFrom(third)).toBe(false);
+  });
+
+  test('should be able to tell if it can be made from a Letter Map', () => {
+    const word = new Word('like');
+    const candidate = new Word('likely'); // Contains word
+    const third = new Word('unrelated');
 
     expect(word.canBeMadeFrom(candidate.letterMap)).toBe(true);
+    expect(word.canBeMadeFrom(third.letterMap)).toBe(false);
   });
 
   test('should be able to tell if it can be made from another word', () => {
@@ -34,7 +51,7 @@ describe('Word', () => {
     expect(word.canBeMadeFrom(candidate)).toBe(true);
   });
 
-  test('should be able to tell if it it an anagram of another word', () => {
+  test('should be able to tell if it is an anagram of another word', () => {
     const word = new Word('orchestra');
     const other = new Word('carthorse');
     const third = new Word('orchestral');
@@ -49,5 +66,6 @@ describe('Word', () => {
 
     expect(word.canBeMadeFrom(third)).toBe(true); // ...but can be made
     expect(other.canBeMadeFrom(third)).toBe(true);
+    expect(third.canBeMadeFrom(word)).toBe(false);
   });
 });
