@@ -2,6 +2,7 @@
 // The word is stored in lower-case
 
 class Word {
+  // Construct from a string
   constructor(word) {
     this.text = word.toLowerCase();
 
@@ -27,8 +28,13 @@ class Word {
     return ok;
   };
 
+  // Takes either a String, Word, or Letter Map
   isAnagramOf = other => {
-    other = other.letterMap;
+    if (other instanceof Word) {
+      other = other.letterMap;
+    } else if (!(other instanceof Map)) {
+      other = new Word(other).letterMap;
+    }
 
     if (this.letterMap.size !== other.size) return false;
 

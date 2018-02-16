@@ -14,7 +14,7 @@ describe('WordList', () => {
   });
 
   test('should be able to return words that can be built from a string', () => {
-    expect(list.canBeMadeFrom('merlot')).toEqual(['merlot']);
+    expect(list.canBeMadeFrom('merlots')).toEqual(['merlot']);
   });
 
   test('should be able to return words that can be built from a Letter Map', () => {

@@ -51,7 +51,7 @@ describe('Word', () => {
     expect(word.canBeMadeFrom(candidate)).toBe(true);
   });
 
-  test('should be able to tell if it is an anagram of another word', () => {
+  test('should be able to tell if a word is an anagram of another word', () => {
     const word = new Word('orchestra');
     const other = new Word('carthorse');
     const third = new Word('orchestral');
@@ -67,5 +67,23 @@ describe('Word', () => {
     expect(word.canBeMadeFrom(third)).toBe(true); // ...but can be made
     expect(other.canBeMadeFrom(third)).toBe(true);
     expect(third.canBeMadeFrom(word)).toBe(false);
+  });
+
+  test('should be able to tell if a string is an anagram of another word', () => {
+    const word = new Word('orchestra');
+    const other = 'carthorse';
+    const third = 'orchestral';
+
+    expect(word.isAnagramOf(other)).toBe(true);
+    expect(word.isAnagramOf(third)).toBe(false); // Not anagrams...
+  });
+
+  test('should be able to tell if a Letter Map is an anagram of another word', () => {
+    const word = new Word('orchestra');
+    const other = new Word('carthorse').letterMap;
+    const third = new Word('orchestral').letterMap;
+
+    expect(word.isAnagramOf(other)).toBe(true);
+    expect(word.isAnagramOf(third)).toBe(false); // Not anagrams...
   });
 });
