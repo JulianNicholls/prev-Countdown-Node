@@ -1,0 +1,42 @@
+header {
+  background: #f0f0f0;
+  padding-top: 4px;
+  padding: 0;
+
+  a,
+  a:visited {
+    color: #777;
+
+    &:hover {
+      color: black;
+      text-decoration: none;
+    }
+  }
+
+  img {
+    padding-top: 4px;
+    cursor: pointer;
+  }
+}
+
+.header-container {
+  display: grid;
+  font-size: $font-size-smallest;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 3fr 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+}
+
+.twitter {
+  grid-column: span 1 / -2;
+}
+
+.github {
+  grid-column: span 1 / -1;
+}
+
+.active {
+  background: #e0e0e0;
+  padding: 16px;
+  color: #111;
+}
