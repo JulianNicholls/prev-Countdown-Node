@@ -1,4 +1,5 @@
-import axios from 'axios';
+import fs from 'fs';
+import path from 'path';
 
 import Word from './Word';
 
@@ -6,19 +7,27 @@ import Word from './Word';
 
 export default class WordList {
   constructor(filename) {
-    console.log('WordList constructor');
-
-    return this._loadWords(filename);
+    this._loadWords(filename);
   }
 
+  // Takes either a String, Word, or Letter Map
+  canBeMadeFrom = other => {
+    if (other instanceof Word) {
+      other = other.letterMap;
+    } else if (!(other instanceof Map)) {
+      other = new Word(other).letterMap;
+    }
+
+    return this.words
+      .filter(word => word.canBeMadeFrom(other))
+      .map(word => word.text)
+      .sort((a, b) => b.length - a.length);
+  };
+
   _loadWords = filename => {
-    axios
-      .get(filename)
-      .then(data => {
-        console.log(data);
-      })
-      .catch(err => {
-        console.log(err);
-      });
+    const fnPath = path.join(__dirname, filename);
+    const data = fs.readFileSync(fnPath, 'utf8');
+
+    this.words = data.split(/\n/).map(line => new Word(line));
   };
 }
