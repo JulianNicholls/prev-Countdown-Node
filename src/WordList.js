@@ -1,11 +1,11 @@
-import fs from 'fs';
-import path from 'path';
+const fs = require('fs');
+const path = require('path');
 
-import Word from './Word';
+const Word = require('./Word');
 
 // A word list that stores words and gives candidate answers
 
-export default class WordList {
+class WordList {
   constructor(filename) {
     this._loadWords(filename);
   }
@@ -31,3 +31,5 @@ export default class WordList {
     this.words = data.split(/\n/).map(line => new Word(line));
   };
 }
+
+module.exports = WordList;
