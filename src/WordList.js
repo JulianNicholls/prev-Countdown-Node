@@ -26,7 +26,6 @@ class WordList {
 
   _loadWords(filename) {
     const fnPath = path.join(__dirname, filename);
-    // console.log('Loading', fnPath);
     const data = fs.readFileSync(fnPath, 'utf8');
 
     this.words = data.split(/\n/).map(line => new Word(line));
