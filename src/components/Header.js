@@ -2,7 +2,7 @@ import React from 'react';
 
 const Header = () => (
   <header>
-    <div className="header-container container">
+    <div className="header-container">
       <a href="http://reallybigshoe.co.uk/index.html">
         <img src="images/RBSLogo2_small.png" alt="" />
       </a>

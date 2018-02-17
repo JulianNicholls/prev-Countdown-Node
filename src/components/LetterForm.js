@@ -18,21 +18,23 @@ class LetterForm extends React.Component {
 
   render() {
     return (
-      <form>
-        <input
-          type="text"
-          id="letters"
-          value={this.state.letters}
-          onChange={this.updateLetters}
-        />
-        <button
-          className="big-button"
-          onClick={this.getWords}
-          disabled={this.state.letters.length < 8}
-        >
-          Countdown
-        </button>
-      </form>
+      <div className="container">
+        <form>
+          <input
+            type="text"
+            id="letters"
+            value={this.state.letters}
+            onChange={this.updateLetters}
+          />
+          <button
+            className="big-button"
+            onClick={this.getWords}
+            disabled={this.state.letters.length < 8}
+          >
+            Countdown
+          </button>
+        </form>
+      </div>
     );
   }
 }
