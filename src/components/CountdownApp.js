@@ -12,12 +12,12 @@ class CountdownApp extends React.Component {
   };
 
   getWords = async letters => {
-    this.setState(() => ({ loading: false }));
+    this.setState(() => ({ loading: true }));
 
     const response = await axios.post('/api/words', { letters });
-    const words = await response.json();
+    console.log(response);
 
-    this.setState(() => ({ loading: false, words }));
+    this.setState(() => ({ loading: false, words: response.data.words }));
   };
 
   render() {
