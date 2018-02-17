@@ -10,7 +10,7 @@ class Word {
   }
 
   // Takes either a String, Word, or Letter Map
-  canBeMadeFrom = other => {
+  canBeMadeFrom(other) {
     if (other instanceof Word) {
       other = other.letterMap;
     } else if (!(other instanceof Map)) {
@@ -26,10 +26,10 @@ class Word {
     });
 
     return ok;
-  };
+  }
 
   // Takes either a String, Word, or Letter Map
-  isAnagramOf = other => {
+  isAnagramOf(other) {
     if (other instanceof Word) {
       other = other.letterMap;
     } else if (!(other instanceof Map)) {
@@ -45,9 +45,9 @@ class Word {
     });
 
     return true;
-  };
+  }
 
-  _deconstruct = () => {
+  _deconstruct() {
     this.letterMap = new Map();
 
     this.text.split('').forEach(char => {
@@ -55,7 +55,7 @@ class Word {
 
       this.letterMap.set(char, count ? count + 1 : 1);
     });
-  };
+  }
 }
 
 module.exports = Word;

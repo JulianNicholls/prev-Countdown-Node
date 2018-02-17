@@ -11,7 +11,7 @@ class WordList {
   }
 
   // Takes either a String, Word, or Letter Map
-  canBeMadeFrom = other => {
+  canBeMadeFrom(other) {
     if (other instanceof Word) {
       other = other.letterMap;
     } else if (!(other instanceof Map)) {
@@ -22,14 +22,15 @@ class WordList {
       .filter(word => word.canBeMadeFrom(other))
       .map(word => word.text)
       .sort((a, b) => b.length - a.length);
-  };
+  }
 
-  _loadWords = filename => {
+  _loadWords(filename) {
     const fnPath = path.join(__dirname, filename);
+    // console.log('Loading', fnPath);
     const data = fs.readFileSync(fnPath, 'utf8');
 
     this.words = data.split(/\n/).map(line => new Word(line));
-  };
+  }
 }
 
 module.exports = WordList;
