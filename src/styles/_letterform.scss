@@ -12,11 +12,7 @@ form {
 }
 
 .big-button {
-  background: linear-gradient(
-    to bottom,
-    hsla(211, 78%, 25%, 70%) 0%,
-    hsla(213, 86%, 11%, 70%) 100%
-  );
+  background: linear-gradient(to bottom, $button-top 0%, $button-bottom 100%);
   border-radius: 8px;
   color: white;
   font-size: $font-size-large;
@@ -24,5 +20,6 @@ form {
 
   &:disabled {
     background: #888;
+    color: black;
   }
 }

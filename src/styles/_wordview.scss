@@ -1,5 +1,43 @@
+.wordview {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr;
+  margin: 20px;
+}
+
 .wordview-title {
   font-size: $font-size-large;
   text-align: center;
   margin: 20px 0;
+}
+
+.word-box {
+  border: 1px solid $button-top;
+  color: $text-colour;
+  font-size: $font-size-small;
+  padding: 0;
+
+  p {
+    padding: 10px;
+  }
+
+  a {
+    color: $text-colour;
+
+    &:hover {
+      color: #ffc600; // WesBos' favourite
+    }
+  }
+
+  .header {
+    background: $button-bottom;
+    font-size: $font-size-medium;
+    height: $font-size-large;
+    line-height: $font-size-large;
+    text-align: center;
+  }
+}
+
+.wide {
+  grid-column: span 2;
 }

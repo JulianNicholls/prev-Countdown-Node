@@ -1,12 +1,28 @@
 import React from 'react';
 
-const WordBox = ({ words }) => (
-  <div className="word-box">{words.map(word => <span key="word">{word}</span>)}</div>
-);
+const WordBox = ({ words }) => {
+  const count = words.length;
+
+  return (
+    <div className={count < 16 ? 'word-box' : 'word-box wide'}>
+      <div className="header">
+        {words[0].length}-letter words <span>({words.length})</span>
+      </div>
+      <p>
+        {words.map((word, index) => (
+          <a key={word} href={`http://dictionary.reference.com/browse/${word}`}>
+            {word.toUpperCase()}
+            {index !== count - 1 && ', '}
+          </a>
+        ))}
+      </p>
+    </div>
+  );
+};
 
 class WordView extends React.Component {
-  renderBoxes = words => {
-    let currentLength = 0; // There won't be any!
+  boxes(words) {
+    let currentLength = 0;
     const wordCount = words.length;
     let currentWords = [];
     let boxes = [];
@@ -25,7 +41,7 @@ class WordView extends React.Component {
     }
 
     return boxes.concat(<WordBox key={currentLength} words={currentWords} />);
-  };
+  }
 
   render() {
     const { words, loading } = this.props;
@@ -36,7 +52,7 @@ class WordView extends React.Component {
       return <h2 className="wordview-title">Loading...</h2>;
     }
 
-    return this.renderBoxes(words);
+    return <div className="wordview">{this.boxes(words)}</div>;
   }
 }
 
