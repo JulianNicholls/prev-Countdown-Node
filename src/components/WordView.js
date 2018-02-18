@@ -1,10 +1,12 @@
 import React from 'react';
 
+const WIDE_CHANGEOVER = 21;
+
 const WordBox = ({ words }) => {
   const count = words.length;
 
   return (
-    <div className={count < 16 ? 'word-box' : 'word-box wide'}>
+    <div className={count < WIDE_CHANGEOVER ? 'word-box' : 'word-box wide'}>
       <div className="header">
         {words[0].length}-letter words <span>({words.length})</span>
       </div>
