@@ -29,3 +29,21 @@ form {
     color: black;
   }
 }
+
+@media (max-width: 600px) {
+  form {
+    background-size: contain;
+  }
+}
+
+@media (max-width: 440px) {
+  input#letters {
+    font-size: $font-size-small;
+    margin-right: 0.5em;
+    width: 6em;
+  }
+
+  .big-button {
+    font-size: $font-size-small;
+  }
+}

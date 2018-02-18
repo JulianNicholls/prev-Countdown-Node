@@ -9,7 +9,7 @@ const Header = () => (
       <a href="http://reallybigshoe.co.uk/index.html">Home</a>
       <a href="http://reallybigshoe.co.uk/portfolio.html">Portfolio</a>
       <a href="http://reallybigshoe.co.uk/contect.html">Contact Us</a>
-      <a className="active" href="https://immense-countdown.herokuapp.com">
+      <a className="active" href="https://countdown-magician.herokuapp.com">
         Countdown
       </a>
       <a

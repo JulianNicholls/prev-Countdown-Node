@@ -58,3 +58,9 @@ header {
     }
   }
 }
+
+@media (max-width: 470px) {
+  .header-container {
+    grid-template-columns: repeat(auto-fill, minmax(85px, 1fr));
+  }
+}
