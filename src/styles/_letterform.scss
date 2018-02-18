@@ -12,12 +12,18 @@ form {
 }
 
 .big-button {
-  background: linear-gradient(to bottom, $button-top 0%, $button-bottom 100%);
+  background: linear-gradient(160deg, $button-top, $button-bottom);
   border-radius: 8px;
   color: white;
   font-size: $font-size-large;
   padding: 10px 15px;
 
+  &:hover {
+    background: linear-gradient(
+      lighten($button-bottom, 10%),
+      lighten($button-top, 10%)
+    );
+  }
   &:disabled {
     background: #888;
     color: black;
