@@ -4,11 +4,12 @@ const WIDE_CHANGEOVER = 21;
 
 const WordBox = ({ words }) => {
   const count = words.length;
+  const length = words[0].length;
 
   return (
     <div className={count < WIDE_CHANGEOVER ? 'word-box' : 'word-box wide'}>
-      <div className="header">
-        {words[0].length}-letter words <span>({words.length})</span>
+      <div className="header" id={`header-${length}`}>
+        {length}-letter words <span>({count})</span>
       </div>
       <p>
         {words.map((word, index) => (
