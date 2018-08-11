@@ -32,13 +32,14 @@ describe('WordList', () => {
     expect(list.canBeMadeFrom(unstable)).toEqual([]);
   });
 
-  test('should return words in descending length order', () => {
-    const nonsense = new Word('daggahecticspen');
+  test('should return words in descending length, then alpha order', () => {
+    const nonsense = new Word('daggahecticspenqull');
     expect(list.canBeMadeFrom(nonsense)).toEqual([
       'sapience',
       'hectic',
-      'dagga', // JS sort is not stable, so these two are not inevitable
-      'naiad'
+      'dagga',
+      'naiad', 
+      'quill'
     ]);
   });
 });

@@ -21,14 +21,23 @@ class WordList {
     return this.words
       .filter(word => word.canBeMadeFrom(other))
       .map(word => word.text)
-      .sort((a, b) => b.length - a.length);
+      .sort((a, b) => {
+        const lDiff = b.length - a.length;
+
+        if (lDiff !== 0) return lDiff;
+
+        return a < b ? -1 : 1;
+      });
   }
 
   _loadWords(filename) {
     const fnPath = path.join(__dirname, filename);
     const data = fs.readFileSync(fnPath, 'utf8');
 
-    this.words = data.split(/\n/).map(line => new Word(line));
+    this.words = data
+      .split(/\n/)
+      .filter(line => line.length !== 0)
+      .map(line => new Word(line));
   }
 }
 
