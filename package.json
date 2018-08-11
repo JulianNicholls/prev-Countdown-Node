@@ -1,7 +1,7 @@
 {
   "name": "countdown-magician",
-  "version": "0.2.0",
-  "description": "Cpuntdown Magaician, ace the letters rounds.",
+  "version": "1.0.1",
+  "description": "Countdown Magician, ace the letters rounds.",
   "main": "index.js",
   "author": "Julian Nicholls <juliannicholls29@gmail.com>",
   "license": "MIT",
@@ -11,7 +11,11 @@
     "build:prod": "webpack -p --env production",
     "dev-server": "webpack-dev-server",
     "start": "node server/server.js",
-    "heroku-postbuild": "yarn run build:prod"
+    "heroku-postbuild": "npm run build:prod"
+  },
+  "engines": {
+    "node": "8.11.x",
+    "npm": "6.2.x"
   },
   "dependencies": {
     "axios": "^0.17.1",
