@@ -24,15 +24,11 @@ module.exports = (env) => {
             use: [
               {
                 loader: 'css-loader',
-                options: {
-                  sourceMap: true
-                }
+                options: { sourceMap: true }
               },
               {
                 loader: 'sass-loader',
-                options: {
-                  sourceMap: true
-                }
+                options: { sourceMap: true }
               }
             ]
           })
@@ -41,7 +37,7 @@ module.exports = (env) => {
     },
     plugins: [CSSExtract],
 
-    devtool: isProduction ? 'source-map' : 'inline-source-map   ',
+    devtool: isProduction ? 'source-map' : 'inline-source-map',
     devServer: {
       contentBase: path.join(__dirname, 'public'),
       publicPath:  '/dist/',

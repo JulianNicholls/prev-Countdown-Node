@@ -6,7 +6,7 @@ This is a rewrite in Node / React of my Ruby Countdown Magician, which runs
 
 ### Git client
 
-I have used Git at the command-line for almost 10 years. Over that time, I have
+I have used Git at the command-line for 10 years. Over that time, I have
 tried many different graphical shells for Git, without finding one that was
 easier and nicer to use than the command-line (in my view).
 
