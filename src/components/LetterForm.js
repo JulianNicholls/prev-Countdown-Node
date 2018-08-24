@@ -23,6 +23,7 @@ class LetterForm extends React.Component {
     event.preventDefault();
 
     this.setState(() => ({ letters: '' }));
+    document.getElementById('letters').focus();
 
     return false;
   };
