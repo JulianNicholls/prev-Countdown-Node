@@ -46,3 +46,15 @@
 .wide {
   grid-column: span 2;
 }
+
+@media (max-width: 460px) {
+  .word-box {
+    font-size: $font-size-smallest;
+
+    .header {
+      font-size: $font-size-small;
+      height: $font-size-medium;
+      line-height: $font-size-medium;
+    }
+  }
+}
