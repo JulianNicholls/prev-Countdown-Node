@@ -37,6 +37,7 @@ class LetterForm extends React.Component {
             id="letters"
             value={this.state.letters}
             onChange={this.updateLetters}
+            autocomplete="off"
           />
           <button className="small-button" onClick={this.reset}>
             &times;

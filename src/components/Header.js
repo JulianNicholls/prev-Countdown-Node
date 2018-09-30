@@ -8,7 +8,7 @@ const Header = () => (
       </a>
       <a href="http://reallybigshoe.co.uk/index.html">Home</a>
       <a href="http://reallybigshoe.co.uk/portfolio.html">Portfolio</a>
-      <a href="http://reallybigshoe.co.uk/contect.html">Contact Us</a>
+      <a href="http://reallybigshoe.co.uk/contact.html">Contact Us</a>
       <a className="active" href="https://countdown-magician.herokuapp.com">
         Countdown
       </a>
