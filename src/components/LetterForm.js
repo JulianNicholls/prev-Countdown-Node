@@ -11,7 +11,6 @@ class LetterForm extends React.Component {
   };
 
   getWords = event => {
-    console.log('submit');
     event.preventDefault();
 
     this.props.getWords(this.state.letters);
@@ -29,23 +28,24 @@ class LetterForm extends React.Component {
   };
 
   render() {
+    const { letters } = this.state;
     return (
       <div className="container">
         <form onSubmit={this.getWords}>
           <input
             type="text"
             id="letters"
-            value={this.state.letters}
+            value={letters}
             onChange={this.updateLetters}
-            autocomplete="off"
+            autoComplete="off"
           />
-          <button className="small-button" onClick={this.reset}>
+          <button type="button" className="small-button" onClick={this.reset}>
             &times;
           </button>
           <button
             type="submit"
             className="big-button"
-            disabled={this.state.letters.length < 8}
+            disabled={letters.length < 7}
           >
             Countdown
           </button>
