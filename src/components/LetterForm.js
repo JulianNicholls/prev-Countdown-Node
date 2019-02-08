@@ -2,12 +2,11 @@ import React from 'react';
 
 class LetterForm extends React.Component {
   state = {
-    letters: ''
+    letters: '',
   };
 
-  updateLetters = event => {
-    const letters = event.target.value;
-    this.setState(() => ({ letters }));
+  updateLetters = evt => {
+    this.setState({ letters: evt.target.value });
   };
 
   getWords = event => {
@@ -18,30 +17,20 @@ class LetterForm extends React.Component {
     return false;
   };
 
-  reset = event => {
-    event.preventDefault();
-
-    this.setState(() => ({ letters: '' }));
-    document.getElementById('letters').focus();
-
-    return false;
-  };
-
   render() {
     const { letters } = this.state;
+
     return (
       <div className="container">
         <form onSubmit={this.getWords}>
           <input
-            type="text"
+            type="search"
             id="letters"
             value={letters}
             onChange={this.updateLetters}
             autoComplete="off"
+            autoCorrect="off"
           />
-          <button type="button" className="small-button" onClick={this.reset}>
-            &times;
-          </button>
           <button
             type="submit"
             className="big-button"
