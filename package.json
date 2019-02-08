@@ -14,8 +14,8 @@
     "heroku-postbuild": "npm run build:prod"
   },
   "engines": {
-    "node": "8.11.x",
-    "npm": "6.3.x"
+    "node": "11.5.x",
+    "npm": "6.9.x"
   },
   "dependencies": {
     "axios": "^0.17.1",
