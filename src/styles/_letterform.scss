@@ -5,9 +5,9 @@ form {
 
   input#letters {
     background: rgba(255, 255, 255, 0.7);
-    margin-right: 0.5rem;
+    margin-right: 1rem;
     text-transform: uppercase;
-    width: 8em;
+    width: 10em;
   }
 }
 
@@ -32,10 +32,9 @@ form {
       lighten($button-top, 10%)
     );
   }
+
   &:disabled {
     opacity: 0.7;
-    // background: #888;
-    // color: black;
   }
 }
 
@@ -45,10 +44,10 @@ form {
   }
 }
 
-@media (max-width: 460px) {
+@media (max-width: 465px) {
   input#letters {
     font-size: $font-size-small;
-    width: 6em;
+    width: 8em;
   }
 
   .small-button {
