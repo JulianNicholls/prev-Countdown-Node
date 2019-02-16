@@ -11,14 +11,6 @@ form {
   }
 }
 
-.small-button {
-  background: white;
-  color: black;
-  font-size: font-size-smallest;
-  padding: 2px 5px;
-  margin-right: 1.5rem;
-}
-
 .big-button {
   background: linear-gradient(160deg, $button-top, $button-bottom);
   border-radius: 8px;
@@ -27,7 +19,7 @@ form {
   padding: 10px 15px;
 
   &:hover {
-    background: linear-gradient(
+    background: linear-gradient(160deg,
       lighten($button-bottom, 10%),
       lighten($button-top, 10%)
     );
@@ -48,10 +40,6 @@ form {
   input#letters {
     font-size: $font-size-small;
     width: 8em;
-  }
-
-  .small-button {
-    margin-right: 0.5em;
   }
 
   .big-button {
