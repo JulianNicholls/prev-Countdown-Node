@@ -1,6 +1,6 @@
 {
   "name": "countdown-magician",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "Countdown Magician, ace the letters rounds.",
   "main": "index.js",
   "author": "Julian Nicholls <juliannicholls29@gmail.com>",

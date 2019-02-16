@@ -4,6 +4,12 @@ This is a rewrite in Node / React of my Ruby Countdown Magician, which runs
 [here](http://immense-countdown.herokuapp.com/) on Heroku. More information here
 [Github Repo](https://github.com/JulianNicholls/Countdown)
 
+This version runs [here](countdown.reallybigshoe.co.uk).
+
+# To run when developing
+
+run `npm start` and `npm run build:dev` in separate windows in the main directory.
+
 ### Git client
 
 I have used Git at the command-line for 10 years. Over that time, I have
