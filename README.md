@@ -8,7 +8,7 @@ This version runs [here](countdown.reallybigshoe.co.uk).
 
 # To run when developing
 
-run `npm start` and `npm run build:dev` in separate windows in the main directory.
+run `npm run dev` in the main directory.
 
 ### Git client
 
