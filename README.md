@@ -4,9 +4,10 @@ This is a rewrite in Node / React of my Ruby Countdown Magician, which runs
 [here](http://immense-countdown.herokuapp.com/) on Heroku. More information here
 [Github Repo](https://github.com/JulianNicholls/Countdown)
 
-This version runs [here](countdown.reallybigshoe.co.uk).
+This version runs [here](http://countdown.reallybigshoe.co.uk). 
+You may need to be patient when you first use it because it runs on a free Heroku instance.
 
-# To run when developing
+## To run when developing
 
 run `npm run dev` in the main directory.
 
