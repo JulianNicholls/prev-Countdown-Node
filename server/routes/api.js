@@ -11,6 +11,4 @@ router.post('/words', (req, res) => {
   res.json({ words });
 });
 
-module.exports = {
-  router: router
-};
+module.exports = { router };
