@@ -5,15 +5,16 @@ form {
 
   input#letters {
     background: rgba(255, 255, 255, 0.7);
+    font-size: $font-size-medium;
     margin-right: 1rem;
     text-transform: uppercase;
-    width: 10em;
+    width: 11em;
   }
 }
 
 .big-button {
   background: linear-gradient(160deg, $button-top, $button-bottom);
-  border-radius: 8px;
+  border-radius: 4px;
   color: white;
   font-size: $font-size-large;
   padding: 10px 15px;
@@ -36,7 +37,7 @@ form {
   }
 }
 
-@media (max-width: 465px) {
+@media (max-width: 490px) {
   input#letters {
     font-size: $font-size-small;
     width: 8em;
