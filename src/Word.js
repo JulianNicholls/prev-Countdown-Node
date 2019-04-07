@@ -53,7 +53,7 @@ class Word {
     this.text.split('').forEach(char => {
       const count = this.letterMap.get(char);
 
-      this.letterMap.set(char, count ? count + 1 : 1);
+      this.letterMap.set(char, count + 1 || 1);
     });
   }
 }
