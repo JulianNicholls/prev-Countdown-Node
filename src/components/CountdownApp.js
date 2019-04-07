@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import axios from 'axios';
 
 import Header from './Header';
@@ -8,7 +8,7 @@ import WordView from './WordView';
 class CountdownApp extends React.Component {
   state = {
     words: [],
-    loading: false
+    loading: false,
   };
 
   getWords = async letters => {
@@ -20,11 +20,13 @@ class CountdownApp extends React.Component {
   };
 
   render() {
-    return [
-      <Header key="h" />,
-      <LetterForm key="f" getWords={this.getWords} />,
-      <WordView key="v" {...this.state} />
-    ];
+    return (
+      <Fragment>
+        <Header />
+        <LetterForm getWords={this.getWords} />
+        <WordView {...this.state} />
+      </Fragment>
+    );
   }
 }
 
