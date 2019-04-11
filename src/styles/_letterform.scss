@@ -38,9 +38,9 @@ form {
 }
 
 @media (max-width: 490px) {
-  input#letters {
+  form input#letters {
     font-size: $font-size-small;
-    width: 8em;
+    width: 9em;
   }
 
   .big-button {
