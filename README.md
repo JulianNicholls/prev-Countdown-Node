@@ -5,7 +5,8 @@ This is a rewrite in Node / React of my Ruby Countdown Magician, which runs
 [Github Repo](https://github.com/JulianNicholls/Countdown)
 
 This version runs [here](http://countdown.reallybigshoe.co.uk). 
-You may need to be patient when you first use it because it runs on a free Heroku instance.
+You may need to be patient when you first use it because it runs on a free Heroku 
+instance and so will take up to 30s to start.
 
 ## To run when developing
 
