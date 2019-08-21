@@ -17,6 +17,7 @@ const LetterForm = ({ getWords }) => {
       <form onSubmit={findWords}>
         <input
           type="search"
+          imputmode="search"
           id="letters"
           value={letters}
           onChange={event => setLetters(event.target.value)}
