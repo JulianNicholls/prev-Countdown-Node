@@ -31,6 +31,7 @@ module.exports = env => {
                 options: { sourceMap: true },
               },
             ],
+            fallback: 'style-loader',
           }),
         },
       ],
