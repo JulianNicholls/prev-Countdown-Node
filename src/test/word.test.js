@@ -15,7 +15,7 @@ describe('Word', () => {
         ['o', 1],
         ['n', 1],
         ['s', 1],
-        ['m', 1]
+        ['m', 1],
       ])
     );
   });
@@ -44,14 +44,16 @@ describe('Word', () => {
     expect(word.canBeMadeFrom(third.letterMap)).toBe(false);
   });
 
-  test('should be able to tell if it can be made from another word', () => {
+  test('should be able to tell if it can be made from another Word', () => {
     const word = new Word('iffy');
     const candidate = new Word('difficulty');
+    const third = new Word('flitty');
 
     expect(word.canBeMadeFrom(candidate)).toBe(true);
+    expect(word.canBeMadeFrom(third)).toBe(false);
   });
 
-  test('should be able to tell if a word is an anagram of another word', () => {
+  test('should be able to tell if a Word is an anagram of another Word', () => {
     const word = new Word('orchestra');
     const other = new Word('carthorse');
     const third = new Word('orchestral');
@@ -69,7 +71,7 @@ describe('Word', () => {
     expect(third.canBeMadeFrom(word)).toBe(false);
   });
 
-  test('should be able to tell if a string is an anagram of another word', () => {
+  test('should be able to tell if a String is an anagram of another Word', () => {
     const word = new Word('orchestra');
     const other = 'carthorse';
     const third = 'orchestral';
@@ -78,7 +80,7 @@ describe('Word', () => {
     expect(word.isAnagramOf(third)).toBe(false); // Not anagrams...
   });
 
-  test('should be able to tell if a Letter Map is an anagram of another word', () => {
+  test('should be able to tell if a Letter Map is an anagram of another Word', () => {
     const word = new Word('orchestra');
     const other = new Word('carthorse').letterMap;
     const third = new Word('orchestral').letterMap;

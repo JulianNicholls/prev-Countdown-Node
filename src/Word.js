@@ -20,9 +20,7 @@ class Word {
     let ok = true;
 
     this.letterMap.forEach((value, key) => {
-      if (!other.has(key) || other.get(key) < value) {
-        ok = false;
-      }
+      ok = ok && other.has(key) && other.get(key) >= value;
     });
 
     return ok;
