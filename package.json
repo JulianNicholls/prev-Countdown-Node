@@ -12,7 +12,8 @@
     "build:prod": "webpack -p --mode production",
     "dev": "concurrently \"nodemon server/server.js --ignore src --ignore public\" \"npm:build:dev\"",
     "start": "node server/server.js",
-    "heroku-postbuild": "npm run build:prod"
+    "heroku-postbuild": "npm run build:prod",
+    "dev-standalone": "webpack-dev-server"
   },
   "engines": {
     "node": "12.x",
@@ -50,6 +51,7 @@
     "eslint-plugin-import": "^2.19.1",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.17.0",
-    "jest": "^24.9.0"
+    "jest": "^24.9.0",
+    "webpack-dev-server": "^3.10.1"
   }
 }
