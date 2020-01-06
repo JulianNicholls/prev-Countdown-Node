@@ -1,10 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import WordBox from './WordBox';
+import { useWords } from '../context';
 
-const WordView = ({ words, loading }) => {
-  const boxes = () => {
+const WordView = () => {
+  const { foundWords } = useWords();
+
+  const boxes = words => {
     let currentLength = 0;
     let currentWords = [];
     let boxes = [];
@@ -25,18 +27,9 @@ const WordView = ({ words, loading }) => {
     return boxes.concat(<WordBox key={currentLength} words={currentWords} />);
   };
 
-  if (words.length === 0 && !loading) return null;
+  if (foundWords.length === 0) return null;
 
-  if (loading) {
-    return <h2 className="wordview-title">Loading...</h2>;
-  }
-
-  return <div className="wordview">{boxes(words)}</div>;
-};
-
-WordView.propTypes = {
-  words: PropTypes.array.isRequired,
-  loading: PropTypes.bool.isRequired,
+  return <div className="wordview">{boxes(foundWords)}</div>;
 };
 
 export default WordView;

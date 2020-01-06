@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 
-const LetterForm = ({ getWords }) => {
+import { useWords } from '../context';
+
+const LetterForm = () => {
   const [letters, setLetters] = useState('');
+  const { getWords } = useWords();
 
   const findWords = event => {
     event.preventDefault();
@@ -17,7 +19,7 @@ const LetterForm = ({ getWords }) => {
       <form onSubmit={findWords}>
         <input
           type="search"
-          imputmode="search"
+          inputMode="search"
           id="letters"
           value={letters}
           onChange={event => setLetters(event.target.value)}
@@ -25,20 +27,12 @@ const LetterForm = ({ getWords }) => {
           autoCorrect="off"
           autoFocus
         />
-        <button
-          type="submit"
-          className="big-button"
-          disabled={letters.length < 7}
-        >
+        <button type="submit" className="big-button" disabled={letters.length < 8}>
           Countdown
         </button>
       </form>
     </div>
   );
-};
-
-LetterForm.propTypes = {
-  getWords: PropTypes.func.isRequired,
 };
 
 export default LetterForm;
