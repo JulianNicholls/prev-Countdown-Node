@@ -14,6 +14,12 @@ const LetterForm = () => {
     return false;
   };
 
+  const handleChange = e => {
+    const entry = e.target.value;
+
+    if (/^[A-Z]*$/i.test(entry)) setLetters(entry);
+  };
+
   return (
     <div className="container">
       <form onSubmit={findWords}>
@@ -22,7 +28,7 @@ const LetterForm = () => {
           inputMode="search"
           id="letters"
           value={letters}
-          onChange={event => setLetters(event.target.value)}
+          onChange={handleChange}
           autoComplete="off"
           autoCorrect="off"
           autoFocus
