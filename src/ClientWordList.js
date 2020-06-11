@@ -16,8 +16,8 @@ class ClientWordList {
     }
 
     return this.words
-      .filter(word => word.canBeMadeFrom(other))
-      .map(word => word.text)
+      .filter((word) => word.canBeMadeFrom(other))
+      .map((word) => word.text)
       .sort((a, b) => {
         const lDiff = b.length - a.length;
 
@@ -31,7 +31,7 @@ class ClientWordList {
     const response = await fetch('/data/countdown.words.json');
     const words = await response.json();
 
-    this.words = words.map(line => new Word(line));
+    this.words = words.map((line) => new Word(line));
   }
 }
 

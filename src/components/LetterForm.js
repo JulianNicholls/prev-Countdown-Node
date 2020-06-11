@@ -6,7 +6,7 @@ const LetterForm = () => {
   const [letters, setLetters] = useState('');
   const { getWords } = useWords();
 
-  const findWords = event => {
+  const findWords = (event) => {
     event.preventDefault();
 
     getWords(letters);
@@ -14,7 +14,7 @@ const LetterForm = () => {
     return false;
   };
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     const entry = e.target.value;
 
     if (/^[A-Z]*$/i.test(entry)) setLetters(entry);
@@ -33,7 +33,7 @@ const LetterForm = () => {
           autoCorrect="off"
           autoFocus
         />
-        <button type="submit" className="big-button" disabled={letters.length < 8}>
+        <button type="submit" className="big-button" disabled={letters.length < 7}>
           Countdown
         </button>
       </form>

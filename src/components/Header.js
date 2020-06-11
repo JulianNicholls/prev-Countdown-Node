@@ -3,10 +3,10 @@ import React from 'react';
 const Header = () => (
   <header>
     <div className="header-container">
-      <a href="http://reallybigshoe.co.uk/index.html">
+      <a href="https://reallybigshoe.co.uk/index.html">
         <img src="images/favicon-32x32.png" alt="" />
       </a>
-      <a href="http://reallybigshoe.co.uk/index.html">Home</a>
+      <a href="https://reallybigshoe.co.uk/index.html">Home</a>
       <a
         className="twitter"
         href="https://twitter.com/ReallyBigShoeUK"
