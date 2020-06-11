@@ -15,7 +15,7 @@
 }
 
 .word-box {
-  border: 1px solid $button-top;
+  border: 1px solid lighten($box-header, 20%);
   color: $text-colour;
   font-size: $font-size-small;
   padding: 0;
@@ -33,7 +33,7 @@
   }
 
   .header {
-    background: $button-bottom;
+    background: $box-header;
     font-size: $font-size-medium;
     height: $font-size-largest;
     line-height: $font-size-largest;
@@ -45,7 +45,7 @@
   }
 
   #header-10, #header-11, #header-12 {
-    background: darken($header-9, 15%);
+    background: darken($header-9, 10%);
   }
 }
 

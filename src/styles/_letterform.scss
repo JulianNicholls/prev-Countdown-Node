@@ -1,11 +1,13 @@
 form {
-  background: url('/images/countdown.jpg') no-repeat;
-  min-height: 320px;
-  padding: 245px 0 0 40px;
+  background: url('/images/countdown.png') no-repeat;
+  background-size: contain;
+  min-height: 500px;
+  padding: 420px 0 0 30px;
 
   input#letters {
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.8);
     font-size: $font-size-medium;
+    padding: 0.3em;
     margin-right: 1rem;
     text-transform: uppercase;
     width: 11em;
@@ -20,20 +22,11 @@ form {
   padding: 10px 15px;
 
   &:hover {
-    background: linear-gradient(160deg,
-      lighten($button-bottom, 10%),
-      lighten($button-top, 10%)
-    );
+    background: linear-gradient(160deg, $button-bottom, $button-top);
   }
 
   &:disabled {
     opacity: 0.7;
-  }
-}
-
-@media (max-width: 600px) {
-  form {
-    background-size: contain;
   }
 }
 
