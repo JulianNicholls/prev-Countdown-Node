@@ -17,7 +17,11 @@ const LetterForm = () => {
   const handleChange = (e) => {
     const entry = e.target.value;
 
-    if (/^[A-Z]*$/i.test(entry)) setLetters(entry);
+    if (/^[A-Z]*$/i.test(entry)) {
+      setLetters(entry);
+
+      if (entry.length >= 7 && entry.length <= 15) getWords(entry);
+    }
   };
 
   return (
