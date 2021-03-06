@@ -1,4 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react';
+import { solve_numbers as solveNumbers } from './cd-numbers';
 
 import ClientWordList from '../ClientWordList';
 
@@ -14,13 +15,14 @@ export const WordsProvider = ({ children }) => {
 
   useEffect(initialLoad, []);
 
-  const getWords = letters => {
+  const getWords = (letters) => {
     setFoundWords(words.canBeMadeFrom(letters));
   };
 
   const state = {
     foundWords,
     getWords,
+    solveNumbers,
   };
 
   return <WordContext.Provider value={state}>{children}</WordContext.Provider>;

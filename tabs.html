@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabs</title>
+
+<style>
+:root {
+  --bg: #071f39;
+  --tab-inactive: #101010;
+}
+
+body {
+  background: black;
+  font-family:Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.container {
+  background: var(--bg);
+  width: 1000px;
+  max-width: 90vw;
+  margin: 2rem auto;
+  min-height: 80vh;
+}
+
+.tab-holder {
+  display: flex;
+  justify-content: start;
+  width: 1000px;
+  background: var(--tab-inactive);
+  border-bottom: 1px solid var(--tab-inactive);
+}
+
+.tab {
+  background: var(--tab-inactive);
+  padding: 0.3rem 1.2rem;
+  color: white;
+  font-size: 1.2rem;
+  border: 1px solid white;
+  border-bottom-color: var(--tab-inactive);
+  margin-right: -0.6rem;
+  border-top-left-radius: 0.7rem;
+  border-top-right-radius: 0.7rem;
+  cursor: pointer;
+}
+
+.tab.active {
+  background: var(--bg);
+  font-weight: bold;
+  z-index: 3;
+}
+
+section {
+  color: white;
+}
+
+#numbers {
+  display: none;
+}
+
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="tab-holder">
+      <div class="tab active" data-section="letters">Letters</div>
+      <div class="tab" data-section="numbers">Numbers</div>
+    </div>
+
+    <section id="letters">
+      <h1 class="text-center">Letters</h1>
+    </section>
+
+    <section id="numbers">
+      <h1 class="text-center">Numbers</h1>
+    </section>
+  </div>
+</body>
+
+<script>
+const tabs = document.querySelectorAll('.tab');
+const letters = document.querySelector('#letters');
+const numbers = document.querySelector('#numbers');
+
+tabs.forEach(tab => tab.addEventListener('click', (e) => {
+  tabs.forEach(tab => tab.classList.remove('active'));
+
+  letters.style.display = 'none';
+  numbers.style.display = 'none';
+
+  e.target.classList.add('active');
+
+  document.querySelector('#' + e.target.dataset.section).style.display = 'block';
+}))
+</script>
+</html>

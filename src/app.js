@@ -3,18 +3,14 @@ import { render } from 'react-dom';
 
 import { WordsProvider } from './context';
 
-import Header from './components/Header';
-import LetterForm from './components/LetterForm';
-import WordView from './components/WordView';
+import Main from './components/Main';
 
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 
 render(
   <WordsProvider>
-    <Header />
-    <LetterForm />
-    <WordView />
+    <Main />
   </WordsProvider>,
   document.getElementById('app')
 );
