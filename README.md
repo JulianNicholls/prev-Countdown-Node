@@ -1,4 +1,15 @@
-# Countdown Magician 2
+# Countdown Magician 3
+
+## This is now obsolete and the latest version is here:
+[Github Repo](https://github.com/JulianNicholls/Countdown-Node).
+
+## Raw Webpack project
+
+This is an example (perhaps, not a great one) of how to set up a Webpack project, but I would not advice that for a new React project. Use create-react-app, it's so much easier and still possible to escape from if you need more control.
+
+I have never needed to eject a CRA project, so YMMV :-)
+
+## Description
 
 This is a rewrite in Node / React of my Ruby Countdown Magician, which runs
 [here](http://immense-countdown.herokuapp.com/) on Heroku. More information here
@@ -8,7 +19,7 @@ This version runs [here](https://reallybigshoe.co.uk/countdown/index.html).
 
 ## To run when developing
 
-run `npm run dev` in the main directory.
+run `npm run dev-standalone` in the main directory.
 
 ### Git client
 
